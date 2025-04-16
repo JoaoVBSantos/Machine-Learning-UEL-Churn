@@ -1,7 +1,36 @@
 from django.db import models
 
 class ChurnMoel(models.Model):
-    id = models.AutoField(primary_key=True)
+    customerID = models.TextField(primary_key=True, max_length=25)
+    SeniorCitizen = models.IntegerField()
+    tenure = models.IntegerField()
+    MonthlyCharges = models.FloatField()
+    TotalCharges = models.FloatField()
+    Partner = models.IntegerField()
+    Dependents = models.IntegerField()
+    PhoneService = models.IntegerField()
+    PaperlessBilling = models.IntegerField()
+    Churn = models.IntegerField()
+    OnlineSecurity = models.IntegerField()
+    OnlineBackup = models.IntegerField()
+    DeviceProtection = models.IntegerField()
+    TechSupport = models.IntegerField()
+    StreamingTV = models.IntegerField()
+    StreamingMovies = models.IntegerField()
+    MultipleLines_No = models.IntegerField()
+    MultipleLines_NoPhoneService = models.IntegerField()
+    MultipleLines_Yes = models.IntegerField()
+    Contract_MonthToMonth = models.IntegerField()
+    Contract_OneYear = models.IntegerField()
+    Contract_TwoYear = models.IntegerField()
+    PaymentMethod_BankTransfer = models.IntegerField()
+    PaymentMethod_CreditCard = models.IntegerField()
+    PaymentMethod_ElectronicCheck = models.IntegerField()
+    PaymentMethod_MailedCheck = models.IntegerField()
+    InternetService_DSL = models.IntegerField()
+    InternetService_FiberOptic = models.IntegerField()
+    NoInternetService = models.IntegerField()
+    Gender = models.IntegerField()
     
     class Meta:
         db_table = 'churn'
