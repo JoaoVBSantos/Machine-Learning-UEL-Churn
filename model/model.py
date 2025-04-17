@@ -7,7 +7,21 @@ import joblib
 
 # Importando base de dados
 df = pd.read_csv("C:/Users/Jão/Downloads/churn.csv", delimiter=",")
-df = df.drop(columns=["customerID", "TotalCharges"], errors='ignore')
+df = df.drop(columns=[
+    "customerID",
+    "TotalCharges",
+    "OnlineBackup",
+    "Contract_TwoYear",
+    "NoInternetService",
+    "PaymentMethod_ElectronicCheck",
+    "Dependents",
+    "PaperlessBilling",
+    "PaymentMethod_MailedCheck",
+    "InternetService_FiberOptic",
+    "InternetService_DSL",
+    "SeniorCitizen",
+    "OnlineSecurity"
+], errors='ignore')
 df
 
 # Separar features (X) e target (y)
@@ -24,8 +38,8 @@ model.fit(X_train, y_train)
 # Avaliar o modelo
 y_pred = model.predict(X_test)
 
-#print("Accuracy:", accuracy_score(y_test, y_pred))
-#print("\nClassification Report:\n", classification_report(y_test, y_pred))
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_pred))
 
-joblib.dump(model, "chur.sav")
+joblib.dump(model, "churn.sav")
 
