@@ -1,6 +1,6 @@
 from django.db import models
 
-class ChurnMoel(models.Model):
+class ChurnModel(models.Model):
     customerID = models.TextField(primary_key=True, max_length=25)
     SeniorCitizen = models.IntegerField()
     tenure = models.IntegerField()
@@ -31,6 +31,6 @@ class ChurnMoel(models.Model):
     InternetService_FiberOptic = models.IntegerField()
     NoInternetService = models.IntegerField()
     Gender = models.IntegerField()
-    
+
     class Meta:
         db_table = 'churn'
