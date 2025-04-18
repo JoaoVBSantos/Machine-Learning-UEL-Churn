@@ -1,0 +1,33 @@
+# churn_client/forms.py
+from django import forms
+from .models import ChurnModel
+
+class ChurnForm(forms.Form):
+    SeniorCitizen = forms.IntegerField(label='Senior Citizen', min_value=0, max_value=1)
+    tenure = forms.IntegerField(label='Tenure (meses)', min_value=0)
+    MonthlyCharges = forms.FloatField(label='Cobrança Mensal')
+    TotalCharges = forms.FloatField(label='Cobrança Total')
+    Partner = forms.IntegerField(label='Tem Parceiro?', min_value=0, max_value=1)
+    Dependents = forms.IntegerField(label='Tem Dependentes?', min_value=0, max_value=1)
+    PhoneService = forms.IntegerField(label='Serviço de Telefone?', min_value=0, max_value=1)
+    PaperlessBilling = forms.IntegerField(label='Fatura Digital?', min_value=0, max_value=1)
+    OnlineSecurity = forms.IntegerField(label='Segurança Online?', min_value=0, max_value=1)
+    OnlineBackup = forms.IntegerField(label='Backup Online?', min_value=0, max_value=1)
+    DeviceProtection = forms.IntegerField(label='Proteção de Dispositivos?', min_value=0, max_value=1)
+    TechSupport = forms.IntegerField(label='Suporte Técnico?', min_value=0, max_value=1)
+    StreamingTV = forms.IntegerField(label='Streaming TV?', min_value=0, max_value=1)
+    StreamingMovies = forms.IntegerField(label='Streaming Filmes?', min_value=0, max_value=1)
+    MultipleLines_No = forms.IntegerField(label='Sem Linhas Múltiplas?', min_value=0, max_value=1)
+    MultipleLines_NoPhoneService = forms.IntegerField(label='Sem Serviço Telefônico?', min_value=0, max_value=1)
+    MultipleLines_Yes = forms.IntegerField(label='Com Linhas Múltiplas?', min_value=0, max_value=1)
+    Contract_MonthToMonth = forms.IntegerField(label='Contrato Mensal?', min_value=0, max_value=1)
+    Contract_OneYear = forms.IntegerField(label='Contrato Anual?', min_value=0, max_value=1)
+    Contract_TwoYear = forms.IntegerField(label='Contrato Bienal?', min_value=0, max_value=1)
+    PaymentMethod_BankTransfer = forms.IntegerField(label='Pagamento: Transferência Bancária?', min_value=0, max_value=1)
+    PaymentMethod_CreditCard = forms.IntegerField(label='Pagamento: Cartão de Crédito?', min_value=0, max_value=1)
+    PaymentMethod_ElectronicCheck = forms.IntegerField(label='Pagamento: Boleto Eletrônico?', min_value=0, max_value=1)
+    PaymentMethod_MailedCheck = forms.IntegerField(label='Pagamento: Cheque Postal?', min_value=0, max_value=1)
+    InternetService_DSL = forms.IntegerField(label='Internet DSL?', min_value=0, max_value=1)
+    InternetService_FiberOptic = forms.IntegerField(label='Internet Fibra Óptica?', min_value=0, max_value=1)
+    # NoInternetService = forms.IntegerField(label='Sem Internet?', min_value=0, max_value=1)
+    Gender = forms.IntegerField(label='Gênero (0=F, 1=M)', min_value=0, max_value=1)

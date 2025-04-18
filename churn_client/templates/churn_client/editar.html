@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Editar Registro</title>
+</head>
+<body>
+    <h1>Editar Registro de Cliente</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="Churn">Churn (0 = Não, 1 = Sim):</label>
+        <input type="number" name="Churn" min="0" max="1" value="{{ registro.Churn }}">
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'lista_registros' %}" class="btn-voltar">Voltar</a>
+</body>
+</html>

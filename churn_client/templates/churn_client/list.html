@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Registros Cadastrados</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Churn</th>
+                <th>Tenure</th>
+                <th>Monthly Charges</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in registros %}
+            <tr>
+                <td>{{ registro.customerID }}</td>
+                <td>{{ registro.Churn }}</td>
+                <td>{{ registro.tenure }}</td>
+                <td>{{ registro.MonthlyCharges }}</td>
+                <td>
+                    <a href="{% url 'editar_registro' registro.customerID %}">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div style="margin-top: 20px;">
+        <a href="{% url 'prever_churn' %}">Cadastrar novo cliente</a> ||
+        <a href="{% url 'dashboard' %}">Visualizar Gráficos</a>
+    </div>
+</body>
+</html>
