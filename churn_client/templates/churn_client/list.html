@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Registros Cadastrados</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Churn</th>
+                <th>Tenure</th>
+                <th>Monthly Charges</th>
+                <!-- Adicione outros campos que quiser -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in registros %}
+            <tr>
+                <td>{{ r.customerID }}</td>
+                <td>{{ r.Churn }}</td>
+                <td>{{ r.tenure }}</td>
+                <td>{{ r.MonthlyCharges }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{% url 'cadastro' %}">Novo Cadastro</a>
+</body>
+</html>
